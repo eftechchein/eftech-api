@@ -31,6 +31,8 @@ app.get("/api/channels", (req, res) => {
   res.json(channels);
 });
 
-app.listen(3000, () => {
-  console.log("API EFTech funcionando en http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`API EFTech funcionando en puerto ${PORT}`);
 });
