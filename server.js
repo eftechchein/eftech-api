@@ -8,11 +8,20 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 📺 LEER CANALES DESDE channels.json
+const CHANNELS_FILE = path.join(__dirname, "channels.json");
+
+// 📺 LEER CANALES
 function getChannels() {
-  const filePath = path.join(__dirname, "channels.json");
-  const data = fs.readFileSync(filePath, "utf8");
+  const data = fs.readFileSync(CHANNELS_FILE, "utf8");
   return JSON.parse(data);
+}
+
+// 💾 GUARDAR CANALES
+function saveChannels(channels) {
+  fs.writeFileSync(
+    CHANNELS_FILE,
+    JSON.stringify(channels, null, 2)
+  );
 }
 
 // 👤 USUARIOS
@@ -42,11 +51,10 @@ app.get("/", (req, res) => {
   res.send("API EFTech funcionando");
 });
 
-// 📺 LISTA DE CANALES
+// 📺 LISTAR CANALES
 app.get("/api/channels", (req, res) => {
   try {
-    const channels = getChannels();
-    res.json(channels);
+    res.json(getChannels());
   } catch (error) {
     res.status(500).json({
       error: "Error leyendo channels.json"
@@ -60,15 +68,53 @@ app.get("/api/categories", (req, res) => {
     const channels = getChannels();
 
     const categories = [
-      ...new Set(
-        channels.map(channel => channel.category)
-      )
+      ...new Set(channels.map(channel => channel.category))
     ];
 
     res.json(categories);
   } catch (error) {
     res.status(500).json({
       error: "Error leyendo categorías"
+    });
+  }
+});
+
+// ➕ AGREGAR CANAL
+app.post("/api/add-channel", (req, res) => {
+  try {
+    const { name, category, logo, stream_url } = req.body;
+
+    if (!name || !category || !stream_url) {
+      return res.status(400).json({
+        success: false,
+        message: "Faltan datos obligatorios"
+      });
+    }
+
+    const channels = getChannels();
+
+    const newChannel = {
+      id: channels.length > 0
+        ? Math.max(...channels.map(c => c.id)) + 1
+        : 1,
+      name,
+      category,
+      logo: logo || "https://via.placeholder.com/150",
+      stream_url
+    };
+
+    channels.push(newChannel);
+    saveChannels(channels);
+
+    res.json({
+      success: true,
+      channel: newChannel
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error agregando canal"
     });
   }
 });
