@@ -119,6 +119,33 @@ app.post("/api/add-channel", (req, res) => {
   }
 });
 
+// ❌ BORRAR CANAL
+app.delete("/api/channel/:id", (req, res) => {
+
+  try {
+
+    const id = parseInt(req.params.id);
+
+    let channels = getChannels();
+
+    const filtered =
+      channels.filter(channel => channel.id !== id);
+
+    saveChannels(filtered);
+
+    res.json({
+      success: true
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      success: false,
+      message: "Error borrando canal"
+    });
+  }
+});
+
 // 🔐 LOGIN
 app.post("/api/login", (req, res) => {
   const { username, password } = req.body;
