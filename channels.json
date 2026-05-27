@@ -1,44 +1,828 @@
 [
   {
     "id": 1,
-    "name": "Tyc Sports",
+    "name": "MX | Fox Sports 1",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmY6O9cgu30pMlxEaws_Puc0_T3tPkpApfkU58AwaGgPBfj7RujuxdMwjrC2qbvaWlI.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1324.ts"
+  },
+  {
+    "id": 2,
+    "name": "MX | Fox Sports 2",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmbbir_6q1Es8kdf5HwreoV3tTTik_dmmPh_IKIAwr7VCjlXJ3pvtMR-_Ks-7aiJyhY.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1325.ts"
+  },
+  {
+    "id": 3,
+    "name": "MX | Fox Sports 3",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYvKDpf2ihD9al-o33jNcgfzeizR5Z2UZUEeuI3pOihavgTb3d8SQnka4EeAIbl3PM.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1329.ts"
+  },
+  {
+    "id": 4,
+    "name": "US | Fox Deportes",
+    "category": "Deportes",
+    "logo": "https://play-lh.googleusercontent.com/uMDC_ZCZXk4i6YfmdiiPfWRBzYKwdpk9pP2gDmg6qkOWBqodlLBdIYPTJTbX8ZxyTA",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/9632.ts"
+  },
+  {
+    "id": 5,
+    "name": "MX | Fox Sports Premium SD",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBiGEaaZF3hngb7aRmhG_YsSzsoWoTPY079aMqHm1PSXi-pAH7lUSfUgyPBEHywHzjU.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/293129.ts"
+  },
+  {
+    "id": 6,
+    "name": "MX | Fox Sports Premium",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBjVn8xu-lzMlz9o9zwkOzlJ3v_DQMW6kyo7QmbZNhjncNSkzGZLlCA13UbACDOBS1c.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/285169.ts"
+  },
+  {
+    "id": 7,
+    "name": "DE | Fox sports Premiun SD",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmY7zi0dPdR6bzSPR1wbTRXy7uppdL_DySOuMUUPpbuYrt_U6G0MY1OEzY86dQ_WUaE.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/263552.ts"
+  },
+  {
+    "id": 8,
+    "name": "DE | Fox sports Premiun HD Ligero",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/3063f1522a9e036d0215d5125ac02fb7.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/262188.ts"
+  },
+  {
+    "id": 9,
+    "name": "HD | Fox Sports 1 MX",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmb26Vc8Nl_2Dsh66tnViZqAH2i2LDDpXTbOEnmw19gktFLlIgaH9n6jyOk9Ap47crE.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/27981.ts"
+  },
+  {
+    "id": 10,
+    "name": "HD | Fox Sports 2 MX",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmbbir_6q1Es8kdf5HwreoV3tTTik_dmmPh_IKIAwr7VCjlXJ3pvtMR-_Ks-7aiJyhY.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/27982.ts"
+  },
+  {
+    "id": 11,
+    "name": "HD | Fox Sports 3 MX",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYvKDpf2ihD9al-o33jNcgfzeizR5Z2UZUEeuI3pOihavgTb3d8SQnka4EeAIbl3PM.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/27983.ts"
+  },
+  {
+    "id": 12,
+    "name": "MX | Espn",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYG8HdlDKetOcUxcxEWlQqMWMg_VdSQjvGev2CDMrWL3vwSL7_FkSvCr9PyA_GNDQ4.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/262192.ts"
+  },
+  {
+    "id": 13,
+    "name": "MX | Espn 2",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmblUl31PD0asWOrbArp3kK5Gf2WAw-dnPWSA6bW587i_O56sjGnCqjI9e3R0QnG8iE.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1328.ts"
+  },
+  {
+    "id": 14,
+    "name": "MX | Espn 3",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmaZwyMZJP1ocs1rX9qY6iyaYa98exVTfShm50S4an3QoHun-b9gjl_JxHSjVS_86G8.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1323.ts"
+  },
+  {
+    "id": 15,
+    "name": "MX | Espn 4",
+    "category": "Deportes",
+    "logo": "https://vivo.com.br/content/dam/vivo-sites/vivo-com-br/homepage/imagens/logos/logo-canal-espn4-252x252.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/443452.ts"
+  },
+  {
+    "id": 16,
+    "name": "LA | ESPN Deportes",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYG8HdlDKetOcUxcxEWlQqMWMg_VdSQjvGev2CDMrWL3vwSL7_FkSvCr9PyA_GNDQ4.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/295699.ts"
+  },
+  {
+    "id": 17,
+    "name": "DE | ESPN Deportes",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmb_AAZzq7JF-H_-nIGUmy18BrlMyLPjtyL1Dse4fvLXKqUidjijy334OTtDYT5miS0.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/292943.ts"
+  },
+  {
+    "id": 18,
+    "name": "US | ESPN DEPORTES HD",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBiMk3YdbnJ87cgzX4M6WagJxt6Dglkw1j7DdpRmSPInU-AQHgG0E384nv-glbf_sgg.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/262177.ts"
+  },
+  {
+    "id": 19,
+    "name": "HD  | ESPN MX",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYG8HdlDKetOcUxcxEWlQqMWMg_VdSQjvGev2CDMrWL3vwSL7_FkSvCr9PyA_GNDQ4.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/262191.ts"
+  },
+  {
+    "id": 20,
+    "name": "HD | Espn MX",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYG8HdlDKetOcUxcxEWlQqMWMg_VdSQjvGev2CDMrWL3vwSL7_FkSvCr9PyA_GNDQ4.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/428208.ts"
+  },
+  {
+    "id": 21,
+    "name": "HD  | ESPN 2 MX",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmblUl31PD0asWOrbArp3kK5Gf2WAw-dnPWSA6bW587i_O56sjGnCqjI9e3R0QnG8iE.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/262174.ts"
+  },
+  {
+    "id": 22,
+    "name": "HD  | ESPN 3 MX",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmaZwyMZJP1ocs1rX9qY6iyaYa98exVTfShm50S4an3QoHun-b9gjl_JxHSjVS_86G8.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/27980.ts"
+  },
+  {
+    "id": 23,
+    "name": "HD | Claro Sports",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/0dc2077d5ade80a969d758e12021da87.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/264122.ts"
+  },
+  {
+    "id": 24,
+    "name": "MX | Claro Sports SD",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/0dc2077d5ade80a969d758e12021da87.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1462.ts"
+  },
+  {
+    "id": 25,
+    "name": "MX | Claro Sport HD",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/0dc2077d5ade80a969d758e12021da87.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1461.ts"
+  },
+  {
+    "id": 26,
+    "name": "MX | TVC Deportes",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/15a0bda8c666b36f5e587d0b75be692e.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/18704.ts"
+  },
+  {
+    "id": 27,
+    "name": "MX | Golf Channel",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBiqarYpH-hN384O4aSzEuBVbnZgZtEhLywuHeA7VfZ2wXk-QS_SYRQVyri38HtG4P8.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1321.ts"
+  },
+  {
+    "id": 28,
+    "name": "ES | One Toro",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYjptJE2-XXfC4B7-mpkQvKZqRBPWgGPXaO9FYOwhtfpYO149YCJUMs1NI6CY28RnA.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/308787.ts"
+  },
+  {
+    "id": 29,
+    "name": "MX | El Garage",
+    "category": "Deportes",
+    "logo": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0018/2274/brand.gif?itok=sH1UGnPO",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1320.ts"
+  },
+  {
+    "id": 30,
+    "name": "ES | DAZN 1",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/d8fafb5f33a6e90a65678291b85ee499.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/361213.ts"
+  },
+  {
+    "id": 31,
+    "name": "ES | DAZN 2",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/d8fafb5f33a6e90a65678291b85ee499.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/279226.ts"
+  },
+  {
+    "id": 32,
+    "name": "ES | DAZN 3",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/d8fafb5f33a6e90a65678291b85ee499.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/279227.ts"
+  },
+  {
+    "id": 33,
+    "name": "US | NFL Network",
+    "category": "Deportes",
+    "logo": "https://i.pinimg.com/originals/ef/79/b1/ef79b1d599369f296078f88c06dd61aa.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1286.ts"
+  },
+  {
+    "id": 34,
+    "name": "US | Fox Sports 1",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmb26Vc8Nl_2Dsh66tnViZqAH2i2LDDpXTbOEnmw19gktFLlIgaH9n6jyOk9Ap47crE.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1274.ts"
+  },
+  {
+    "id": 35,
+    "name": "US | Fox Sports 2",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmbbir_6q1Es8kdf5HwreoV3tTTik_dmmPh_IKIAwr7VCjlXJ3pvtMR-_Ks-7aiJyhY.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1275.ts"
+  },
+  {
+    "id": 36,
+    "name": "US | Fox Soccer Plus",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmY6O9cgu30pMlxEaws_Puc0_T3tPkpApfkU58AwaGgPBfj7RujuxdMwjrC2qbvaWlI.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1276.ts"
+  },
+  {
+    "id": 37,
+    "name": "US | GOAL TV ESP",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYJVXtFT-IXo8u0H80olsL7Re75GGMMLiMnABjPddacY4a8hIGdtJtzeqB28AWW4xA.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1334.ts"
+  },
+  {
+    "id": 38,
+    "name": "US | GOLTV ENG",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYJVXtFT-IXo8u0H80olsL7Re75GGMMLiMnABjPddacY4a8hIGdtJtzeqB28AWW4xA.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1299.ts"
+  },
+  {
+    "id": 39,
+    "name": "US | Bein Sports USA HD",
+    "category": "Deportes",
+    "logo": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/032015/bein_sport_0.png?itok=bInPGhZh",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1227.ts"
+  },
+  {
+    "id": 40,
+    "name": "LA | Bein sports Ñ *",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmaoatK9FDECw2MuEGbhYVtgatKc5SD9cVTqUH2VbxFnE2V0tDVq_Vo3toww13V7bc4.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/258965.ts"
+  },
+  {
+    "id": 41,
+    "name": "US | Bein Sports Ñ HD",
+    "category": "Deportes",
+    "logo": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/032015/bein_sport_0.png?itok=bInPGhZh",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/258964.ts"
+  },
+  {
+    "id": 42,
+    "name": "US | BEIN SPORTS Ñ",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmaoatK9FDECw2MuEGbhYVtgatKc5SD9cVTqUH2VbxFnE2V0tDVq_Vo3toww13V7bc4.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/40963.ts"
+  },
+  {
+    "id": 43,
+    "name": "DE | ESPN SUR 1",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYG8HdlDKetOcUxcxEWlQqMWMg_VdSQjvGev2CDMrWL3vwSL7_FkSvCr9PyA_GNDQ4.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/244639.ts"
+  },
+  {
+    "id": 44,
+    "name": "DE | ESPN 2 SUR",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmblUl31PD0asWOrbArp3kK5Gf2WAw-dnPWSA6bW587i_O56sjGnCqjI9e3R0QnG8iE.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/262175.ts"
+  },
+  {
+    "id": 45,
+    "name": "DE | ESPN 3 SUR",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmaZwyMZJP1ocs1rX9qY6iyaYa98exVTfShm50S4an3QoHun-b9gjl_JxHSjVS_86G8.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/244641.ts"
+  },
+  {
+    "id": 46,
+    "name": "AR | ESPN *SD",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBiMk3YdbnJ87cgzX4M6WagJxt6Dglkw1j7DdpRmSPInU-AQHgG0E384nv-glbf_sgg.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/263377.ts"
+  },
+  {
+    "id": 47,
+    "name": "AR | ESPN 1",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYG8HdlDKetOcUxcxEWlQqMWMg_VdSQjvGev2CDMrWL3vwSL7_FkSvCr9PyA_GNDQ4.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1246.ts"
+  },
+  {
+    "id": 48,
+    "name": "AR | ESPN 1 *",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYG8HdlDKetOcUxcxEWlQqMWMg_VdSQjvGev2CDMrWL3vwSL7_FkSvCr9PyA_GNDQ4.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/263376.ts"
+  },
+  {
+    "id": 49,
+    "name": "AR | ESPN 2",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmblUl31PD0asWOrbArp3kK5Gf2WAw-dnPWSA6bW587i_O56sjGnCqjI9e3R0QnG8iE.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/262403.ts"
+  },
+  {
+    "id": 50,
+    "name": "AR | ESPN 3 Arg",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmaZwyMZJP1ocs1rX9qY6iyaYa98exVTfShm50S4an3QoHun-b9gjl_JxHSjVS_86G8.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1250.ts"
+  },
+  {
+    "id": 51,
+    "name": "AR | ESPN 4",
+    "category": "Deportes",
+    "logo": "https://imagenes.gatotv.com/logos/canales/oscuros/espn_4-mediano.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/296664.ts"
+  },
+  {
+    "id": 52,
+    "name": "AR | ESPN 1 HD",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBiMk3YdbnJ87cgzX4M6WagJxt6Dglkw1j7DdpRmSPInU-AQHgG0E384nv-glbf_sgg.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/262270.ts"
+  },
+  {
+    "id": 53,
+    "name": "AR | ESPN 2 HD",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmblUl31PD0asWOrbArp3kK5Gf2WAw-dnPWSA6bW587i_O56sjGnCqjI9e3R0QnG8iE.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/262176.ts"
+  },
+  {
+    "id": 54,
+    "name": "AR | FOX SPORTS 1  Arg",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmb26Vc8Nl_2Dsh66tnViZqAH2i2LDDpXTbOEnmw19gktFLlIgaH9n6jyOk9Ap47crE.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/292978.ts"
+  },
+  {
+    "id": 55,
+    "name": "AR | FOX SPORTS 1 SD Arg",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmb26Vc8Nl_2Dsh66tnViZqAH2i2LDDpXTbOEnmw19gktFLlIgaH9n6jyOk9Ap47crE.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1234.ts"
+  },
+  {
+    "id": 56,
+    "name": "AR | FOX SPORTS 2 SD Arg",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmbbir_6q1Es8kdf5HwreoV3tTTik_dmmPh_IKIAwr7VCjlXJ3pvtMR-_Ks-7aiJyhY.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1236.ts"
+  },
+  {
+    "id": 57,
+    "name": "AR | FOX SPORTS 3 SD Arg",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYvKDpf2ihD9al-o33jNcgfzeizR5Z2UZUEeuI3pOihavgTb3d8SQnka4EeAIbl3PM.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1238.ts"
+  },
+  {
+    "id": 58,
+    "name": "AR | FOX SPORTS 2 HD Arg",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmbbir_6q1Es8kdf5HwreoV3tTTik_dmmPh_IKIAwr7VCjlXJ3pvtMR-_Ks-7aiJyhY.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1237.ts"
+  },
+  {
+    "id": 59,
+    "name": "DE | Fox Sports Premium 1080",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/3063f1522a9e036d0215d5125ac02fb7.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/262272.ts"
+  },
+  {
+    "id": 60,
+    "name": "AR | ESPN PREMIUM.",
+    "category": "Deportes",
+    "logo": "https://s3.us-east-1.amazonaws.com/forofms.na/monthly_2022_05/1502534879_ESPNPremium(3).png.8e769b9653fbb8f6e539e9a2923f2df5.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/262271.ts"
+  },
+  {
+    "id": 61,
+    "name": "AR | DTV SPORTS HD",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBiU98v48sO0YQlkrIhjTMb37T3O-le0y1MSr5UUyEdOeg5POLZ1wfJFmBU3OgcX3qQ.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/267392.ts"
+  },
+  {
+    "id": 62,
+    "name": "AR | DTV SPORT",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmZs_H9m1AJP2QH1_1hLk1bWATagTa-TwhEVzjWDTai2Mc_0MuatJ6coin7ZKNBwc2U.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1243.ts"
+  },
+  {
+    "id": 63,
+    "name": "AR | DTV SPORTS*",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmZs_H9m1AJP2QH1_1hLk1bWATagTa-TwhEVzjWDTai2Mc_0MuatJ6coin7ZKNBwc2U.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1244.ts"
+  },
+  {
+    "id": 64,
+    "name": "AR | TyC Sports Argentina",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBiYQsZadUDrJBRfbGv35QHyecNV_GOtXlZLgghs-AFkufjFrvhq2HoQEmKQWVU4kvI.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/262180.ts"
+  },
+  {
+    "id": 65,
+    "name": "AR | TyC Sports",
     "category": "Deportes",
     "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBiYQsZadUDrJBRfbGv35QHyecNV_GOtXlZLgghs-AFkufjFrvhq2HoQEmKQWVU4kvI.png",
     "stream_url": "http://tutele.lat:8080/live/pamela/123456/262179.ts"
   },
   {
-    "id": 2,
-    "name": "Canal Demo 2",
-    "category": "Prueba",
-    "logo": "https://via.placeholder.com/150",
-    "stream_url": "https://test-streams.mux.dev/test_001/stream.m3u8"
+    "id": 66,
+    "name": "AR | TNT SPORTS",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBhu9DW_FwDr8HHka2oLWk0UHmKQLIWKz3rNMyfHOjoZ6zhnOhhJ6gF1QchoFAwTVl8.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1259.ts"
   },
   {
-    "id": 3,
-    "name": "Canal Nuevo",
-    "category": "Prueba",
-    "logo": "https://via.placeholder.com/150",
-    "stream_url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+    "id": 67,
+    "name": "ES | MOVISTAR LIGA DE CAMPEONES 1 HD",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYY3LvmbVfDTdY9uKMKEz4-aC8onTuUO-vQGZNkdNbDYW_EnzeOTYDcyGCLTwI4WpU.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/262193.ts"
   },
   {
-    "id": 4,
-    "name": "Canal Nuevo",
-    "category": "Prueba",
-    "logo": "https://via.placeholder.com/150",
-    "stream_url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+    "id": 68,
+    "name": "ES | MOVISTAR DEPORTES HD",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYY3LvmbVfDTdY9uKMKEz4-aC8onTuUO-vQGZNkdNbDYW_EnzeOTYDcyGCLTwI4WpU.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1222.ts"
   },
   {
-    "id": 5,
-    "name": "Canal Nuevo",
-    "category": "Prueba",
-    "logo": "https://via.placeholder.com/150",
-    "stream_url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+    "id": 69,
+    "name": "ES: LA LIGA TV BAR",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYY3LvmbVfDTdY9uKMKEz4-aC8onTuUO-vQGZNkdNbDYW_EnzeOTYDcyGCLTwI4WpU.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/435216.ts"
   },
   {
-    "id": 6,
-    "name": "Canal Nuevo",
-    "category": "Prueba",
-    "logo": "https://via.placeholder.com/150",
-    "stream_url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+    "id": 70,
+    "name": "ES | M. La Liga 1",
+    "category": "Deportes",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLY00Y8v1Xn76GGElsdrsH96G7hj53K9ggdw&s",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/435853.ts"
+  },
+  {
+    "id": 71,
+    "name": "ES | Mo. La Liga 1",
+    "category": "Deportes",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLY00Y8v1Xn76GGElsdrsH96G7hj53K9ggdw&s",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/435854.ts"
+  },
+  {
+    "id": 72,
+    "name": "ES | M. LIGA HD",
+    "category": "Deportes",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLY00Y8v1Xn76GGElsdrsH96G7hj53K9ggdw&s",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/435855.ts"
+  },
+  {
+    "id": 73,
+    "name": "ES | #VAMOS HD",
+    "category": "Deportes",
+    "logo": "https://yt3.ggpht.com/a/AGF-l7_3hipWfqxC1DU2gFw10scr83r9wULwZ0j0Og=s900-c-k-c0xffffffff-no-rj-mo",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1218.ts"
+  },
+  {
+    "id": 74,
+    "name": "DE | Movistar Deportes",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYY3LvmbVfDTdY9uKMKEz4-aC8onTuUO-vQGZNkdNbDYW_EnzeOTYDcyGCLTwI4WpU.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/226526.ts"
+  },
+  {
+    "id": 75,
+    "name": "ES | Real Madrid TV",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmbdrSHqBm8tXkfdLHVWAUvy3-oZi2fZuoOsP6uFTWV3nLv9m-J24CHgc_CQc9s7XJo.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1467.ts"
+  },
+  {
+    "id": 76,
+    "name": "CR | Tigo Sport",
+    "category": "Deportes",
+    "logo": "https://imagenes.gatotv.com/logos/canales/oscuros/tigo_sports-mediano.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/274657.ts"
+  },
+  {
+    "id": 77,
+    "name": "DE | GolTV",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYJVXtFT-IXo8u0H80olsL7Re75GGMMLiMnABjPddacY4a8hIGdtJtzeqB28AWW4xA.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/248165.ts"
+  },
+  {
+    "id": 78,
+    "name": "UY | VTV",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmbEF1xrosw_UgDLCpsTbe4UJKdGP5aw1h16eORLd_NYwuFgw7novRWQUQeKckVLdWM.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1354.ts"
+  },
+  {
+    "id": 79,
+    "name": "UY | VTV HD",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmbEF1xrosw_UgDLCpsTbe4UJKdGP5aw1h16eORLd_NYwuFgw7novRWQUQeKckVLdWM.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1355.ts"
+  },
+  {
+    "id": 80,
+    "name": "CH | FOX SPORTS 1",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmb26Vc8Nl_2Dsh66tnViZqAH2i2LDDpXTbOEnmw19gktFLlIgaH9n6jyOk9Ap47crE.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1240.ts"
+  },
+  {
+    "id": 81,
+    "name": "CO | Win Sports Op3",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/509a418e24de822fa42d205f7f92a46d.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1265.ts"
+  },
+  {
+    "id": 82,
+    "name": "ES | EUROSPORT 1",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmZ9yIWpMSHd9CCIqNuZbDR2bxeUVe0i_0YoRD-ExzSiWE5HaGNfCPKAPSMjm11DxIs.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1207.ts"
+  },
+  {
+    "id": 83,
+    "name": "US | ESPN",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmYG8HdlDKetOcUxcxEWlQqMWMg_VdSQjvGev2CDMrWL3vwSL7_FkSvCr9PyA_GNDQ4.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1269.ts"
+  },
+  {
+    "id": 84,
+    "name": "US | ESPN 2",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmblUl31PD0asWOrbArp3kK5Gf2WAw-dnPWSA6bW587i_O56sjGnCqjI9e3R0QnG8iE.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/266771.ts"
+  },
+  {
+    "id": 85,
+    "name": "US | ESPN U",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmY7SZJKmhPf_UTYQIu7K-RXSVQLlfEEd-tFEJ0HYHILavU_Dgh168O_wbL1JKNcqi0.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1271.ts"
+  },
+  {
+    "id": 86,
+    "name": "US | ESPN News",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBhn5xUZ7Op9I-F9GXteT6xeA4nv1Vf4KMmDtJk0U7K6FriReohFsliYPzNoL0sI0Jo.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1270.ts"
+  },
+  {
+    "id": 87,
+    "name": "HD ES | EUROSPORT 1",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmZ9yIWpMSHd9CCIqNuZbDR2bxeUVe0i_0YoRD-ExzSiWE5HaGNfCPKAPSMjm11DxIs.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/312589.ts"
+  },
+  {
+    "id": 88,
+    "name": "HD ES | EUROSPORT 2",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmZ9yIWpMSHd9CCIqNuZbDR2bxeUVe0i_0YoRD-ExzSiWE5HaGNfCPKAPSMjm11DxIs.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/312590.ts"
+  },
+  {
+    "id": 89,
+    "name": "US | NBC Sports Philadelphia",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/473185f11ac63f47f1be4f0734945868.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/232373.ts"
+  },
+  {
+    "id": 90,
+    "name": "US | NBC Sports California",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmZ9m_mnu6DC3YIdE_j9BFecMlMVKaBulWH_HTL4p5U5pR0Pq5ZlREGDByJcpqhdEDI.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/232370.ts"
+  },
+  {
+    "id": 91,
+    "name": "US | NBC Sports Boston",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBgyip0J5fcRsxIyJ-TJ_zS70_3nwC4cLFixRzexZHu2WhJyo08_vwPKSn24ouQuDeg.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/232369.ts"
+  },
+  {
+    "id": 92,
+    "name": "USA | Bally Sports Southwest",
+    "category": "Deportes",
+    "logo": "https://img.athleticbusiness.com/files/base/abmedia/all/image/2023/03/rbomyvnzrnq0s39tilzp.64131e459c65d.png?auto=format%2Ccompress&q=70&w=300",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/312578.ts"
+  },
+  {
+    "id": 93,
+    "name": "USA | Bally Sports South",
+    "category": "Deportes",
+    "logo": "https://img.athleticbusiness.com/files/base/abmedia/all/image/2023/03/rbomyvnzrnq0s39tilzp.64131e459c65d.png?auto=format%2Ccompress&q=70&w=300",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/312577.ts"
+  },
+  {
+    "id": 94,
+    "name": "USA | Bally Sports SoCal",
+    "category": "Deportes",
+    "logo": "https://img.athleticbusiness.com/files/base/abmedia/all/image/2023/03/rbomyvnzrnq0s39tilzp.64131e459c65d.png?auto=format%2Ccompress&q=70&w=300",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/312574.ts"
+  },
+  {
+    "id": 95,
+    "name": "US | Bally Sports San Diego",
+    "category": "Deportes",
+    "logo": "https://img.athleticbusiness.com/files/base/abmedia/all/image/2023/03/rbomyvnzrnq0s39tilzp.64131e459c65d.png?auto=format%2Ccompress&q=70&w=300",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/308367.ts"
+  },
+  {
+    "id": 96,
+    "name": "US | World Fishing Network",
+    "category": "Deportes",
+    "logo": "https://satellitesolutions.com/wp-content/uploads/2023/09/WFN-1.png.webp",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/236447.ts"
+  },
+  {
+    "id": 97,
+    "name": "US | FOX 35 Orlando",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBj67_F6SPUaRGFsZm-Y4QsXs4rM6yAI9CcdQhSIGNxw-D4VzHCpnVmG1d-eeq7dT8g.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/265417.ts"
+  },
+  {
+    "id": 98,
+    "name": "US | FOX Sports Sun",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmY6O9cgu30pMlxEaws_Puc0_T3tPkpApfkU58AwaGgPBfj7RujuxdMwjrC2qbvaWlI.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/232365.ts"
+  },
+  {
+    "id": 99,
+    "name": "US | FOX Sports South East",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmY6O9cgu30pMlxEaws_Puc0_T3tPkpApfkU58AwaGgPBfj7RujuxdMwjrC2qbvaWlI.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/232363.ts"
+  },
+  {
+    "id": 100,
+    "name": "US | FOX Sports South",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBj67_F6SPUaRGFsZm-Y4QsXs4rM6yAI9CcdQhSIGNxw-D4VzHCpnVmG1d-eeq7dT8g.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/232362.ts"
+  },
+  {
+    "id": 101,
+    "name": "US | WWE Network",
+    "category": "Deportes",
+    "logo": "https://userdocs.smartdnsproxy.com/userdocs/services/new/wwe-network.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1466.ts"
+  },
+  {
+    "id": 102,
+    "name": "US | Yes Network",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmacIm_L07EW13VpU4lTypV-YOmaD4FnrolarZ5xeOzMoYzrzAv6Kc4BG5oZRgdt3jQ.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1296.ts"
+  },
+  {
+    "id": 103,
+    "name": "US | SNY",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmaOdkErwfzqcjiJMcKDACiiHi_AgSdrg06Xdbon1bCKVXms0mG4_BoNcBAFCDAJMpU.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1294.ts"
+  },
+  {
+    "id": 104,
+    "name": "US | Outdoor Channel",
+    "category": "Deportes",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ_iU-N3Jmi-DPnL2n1RnAF4E62bHtLGBreoW9nUKKldRXbx5F&s",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1289.ts"
+  },
+  {
+    "id": 105,
+    "name": "US | MSNBC",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/473185f11ac63f47f1be4f0734945868.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1283.ts"
+  },
+  {
+    "id": 106,
+    "name": "US | MSG",
+    "category": "Deportes",
+    "logo": "https://image.spreadshirtmedia.com/image-server/v1/compositions/T121A70PA4057PT17X31Y34D11646780FS7247Cx000000/views/1,width=650,height=650,appearanceId=70.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1281.ts"
+  },
+  {
+    "id": 107,
+    "name": "US | Golf Channel",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSAFGN1q83WZ77m3-laKosmY2VSzfRwlzjFklNGuhuwECpEwHmvG8z7zdXth2iIRpQ6ZOGR0OMWODpKHoizEpbRs.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1278.ts"
+  },
+  {
+    "id": 108,
+    "name": "US | GINX eSports",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBjEYMA9XRbo46Tzpxi8Ji-4o0KzTlVdhMY9-w8gsAgBR02OdhmF248au9AnTsjjpU4.jpg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1277.ts"
+  },
+  {
+    "id": 109,
+    "name": "US | Fight Network",
+    "category": "Deportes",
+    "logo": "https://media.licdn.com/dms/image/C4D0BAQGF3AbKOnMKFw/company-logo_200_200/0?e=2159024400&v=beta&t=s5TI6p82ni-QS6E-xmziuEjkBC_DpXyVJAkOBlkkMfg",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1272.ts"
+  },
+  {
+    "id": 110,
+    "name": "US  | TENNIS CHANEL",
+    "category": "Deportes",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJKEDr4hvyZRcA_SgGtlYJtVQn25C3prTfuBnWTTpwWuw52FQo&s",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/1261.ts"
+  },
+  {
+    "id": 111,
+    "name": "USA | Altitude Sports",
+    "category": "Deportes",
+    "logo": "https://www.tvguide.com/a/img/resize/072e80cdb0b5bb611ab7bc885ef03ae4f94a7640/hub/2023/03/10/c3d6d46c-8296-425f-be7e-637359f397e8/altitudersnlogo.jpg?auto=webp&width=1092",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/416819.ts"
+  },
+  {
+    "id": 112,
+    "name": "USA | NESN",
+    "category": "Deportes",
+    "logo": "https://preview.redd.it/d4ruc1anfdq31.jpg?auto=webp&s=000a78ad6f1cb9dc6b554102f33bbc10cc61ce7c",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/384023.ts"
+  },
+  {
+    "id": 113,
+    "name": "USA | NESN Plus",
+    "category": "Deportes",
+    "logo": "https://preview.redd.it/d4ruc1anfdq31.jpg?auto=webp&s=000a78ad6f1cb9dc6b554102f33bbc10cc61ce7c",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/384024.ts"
+  },
+  {
+    "id": 114,
+    "name": "US | SportsMan Channel",
+    "category": "Deportes",
+    "logo": "https://www.sportsmancanada.ca/wp-content/uploads/2019/01/Sportsman_Channel.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/396859.ts"
+  },
+  {
+    "id": 115,
+    "name": "US | Cowboy Channel",
+    "category": "Deportes",
+    "logo": "http://miarea.vip:8080/images/1e1fa0acfbcaf661731d8af0e06157cb.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/428365.ts"
+  },
+  {
+    "id": 116,
+    "name": "US | Spectrum Spornet LA",
+    "category": "Deportes",
+    "logo": "https://i0.wp.com/dodgersbeat.com/wp-content/uploads/2015/06/image001.png?fit=322%2C161&ssl=1",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/440285.ts"
+  },
+  {
+    "id": 117,
+    "name": "AR | DTV SPORTS",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBiU98v48sO0YQlkrIhjTMb37T3O-le0y1MSr5UUyEdOeg5POLZ1wfJFmBU3OgcX3qQ.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/461783.ts"
+  },
+  {
+    "id": 118,
+    "name": "US | CBS Sports",
+    "category": "Deportes",
+    "logo": "https://logodownload.org/wp-content/uploads/2021/05/cbs-sports-logo-0.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/489775.ts"
   }
 ]
