@@ -8,6 +8,10 @@
 
 <h1>EFTech Admin</h1>
 
+<button onclick="logoutAdmin()">
+  🔒 Cerrar sesión
+</button>
+
 <button onclick="showTab('channelsTab')">📺 Canales</button>
 <button onclick="showTab('usersTab')">👤 Usuarios</button>
 
@@ -208,6 +212,22 @@ function editUser(user) {
   document.getElementById("active").checked = user.active;
   document.getElementById("expires").value = user.expires;
   window.scrollTo(0, 0);
+}
+
+function logoutAdmin() {
+
+  fetch(window.location.origin, {
+    headers: {
+      "Authorization": "Basic logout"
+    }
+  }).then(() => {
+
+    window.location.href =
+      "https://logout:logout@" +
+      window.location.host +
+      "/admin.html";
+
+  });
 }
 
 function clearUserForm() {
