@@ -147,6 +147,46 @@ app.delete("/api/channel/:id", (req, res) => {
   }
 });
 
+// ✏️ EDITAR CANAL
+app.put("/api/channel/:id", (req, res) => {
+  try {
+    const id = parseInt(req.params.id);
+    const { name, category, logo, stream_url } = req.body;
+
+    let channels = getChannels();
+
+    const index = channels.findIndex(channel => channel.id === id);
+
+    if (index === -1) {
+      return res.status(404).json({
+        success: false,
+        message: "Canal no encontrado"
+      });
+    }
+
+    channels[index] = {
+      ...channels[index],
+      name: name || channels[index].name,
+      category: category || channels[index].category,
+      logo: logo || channels[index].logo,
+      stream_url: stream_url || channels[index].stream_url
+    };
+
+    saveChannels(channels);
+
+    res.json({
+      success: true,
+      channel: channels[index]
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error editando canal"
+    });
+  }
+});
+
 // 🔐 LOGIN
 app.post("/api/login", (req, res) => {
   const { username, password } = req.body;
