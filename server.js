@@ -7,10 +7,33 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname));
 
 const CHANNELS_FILE = path.join(__dirname, "channels.json");
 const USERS_FILE = path.join(__dirname, "users.json");
+
+// 🔐 ADMIN WEB
+const ADMIN_USER = "admin";
+const ADMIN_PASS = "eftech123";
+
+function requireAdmin(req, res, next) {
+  const auth = req.headers.authorization;
+
+  if (!auth || !auth.startsWith("Basic ")) {
+    res.setHeader("WWW-Authenticate", "Basic realm='EFTech Admin'");
+    return res.status(401).send("Acceso restringido");
+  }
+
+  const base64 = auth.split(" ")[1];
+  const decoded = Buffer.from(base64, "base64").toString("utf8");
+  const [user, pass] = decoded.split(":");
+
+  if (user === ADMIN_USER && pass === ADMIN_PASS) {
+    return next();
+  }
+
+  res.setHeader("WWW-Authenticate", "Basic realm='EFTech Admin'");
+  return res.status(401).send("Usuario o contraseña incorrectos");
+}
 
 // 📺 CANALES
 function getChannels() {
@@ -37,7 +60,12 @@ app.get("/", (req, res) => {
   res.send("API EFTech funcionando");
 });
 
-// 📺 LISTAR CANALES
+// 🛡️ PANEL ADMIN PROTEGIDO
+app.get("/admin.html", requireAdmin, (req, res) => {
+  res.sendFile(path.join(__dirname, "admin.html"));
+});
+
+// 📺 LISTAR CANALES - APK
 app.get("/api/channels", (req, res) => {
   try {
     res.json(getChannels());
@@ -46,7 +74,7 @@ app.get("/api/channels", (req, res) => {
   }
 });
 
-// 📂 CATEGORÍAS
+// 📂 CATEGORÍAS - APK
 app.get("/api/categories", (req, res) => {
   try {
     const channels = getChannels();
@@ -61,8 +89,8 @@ app.get("/api/categories", (req, res) => {
   }
 });
 
-// ➕ AGREGAR CANAL
-app.post("/api/add-channel", (req, res) => {
+// ➕ AGREGAR CANAL - ADMIN
+app.post("/api/add-channel", requireAdmin, (req, res) => {
   try {
     const { name, category, logo, stream_url } = req.body;
 
@@ -99,8 +127,8 @@ app.post("/api/add-channel", (req, res) => {
   }
 });
 
-// ✏️ EDITAR CANAL
-app.put("/api/channel/:id", (req, res) => {
+// ✏️ EDITAR CANAL - ADMIN
+app.put("/api/channel/:id", requireAdmin, (req, res) => {
   try {
     const id = parseInt(req.params.id);
     const { name, category, logo, stream_url } = req.body;
@@ -138,8 +166,8 @@ app.put("/api/channel/:id", (req, res) => {
   }
 });
 
-// ❌ BORRAR CANAL
-app.delete("/api/channel/:id", (req, res) => {
+// ❌ BORRAR CANAL - ADMIN
+app.delete("/api/channel/:id", requireAdmin, (req, res) => {
   try {
     const id = parseInt(req.params.id);
 
@@ -158,8 +186,8 @@ app.delete("/api/channel/:id", (req, res) => {
   }
 });
 
-// 👤 LISTAR USUARIOS
-app.get("/api/users", (req, res) => {
+// 👤 LISTAR USUARIOS - ADMIN
+app.get("/api/users", requireAdmin, (req, res) => {
   try {
     res.json(getUsers());
   } catch (error) {
@@ -170,8 +198,8 @@ app.get("/api/users", (req, res) => {
   }
 });
 
-// ➕ AGREGAR USUARIO
-app.post("/api/add-user", (req, res) => {
+// ➕ AGREGAR USUARIO - ADMIN
+app.post("/api/add-user", requireAdmin, (req, res) => {
   try {
     const { username, password, active, expires } = req.body;
 
@@ -216,8 +244,8 @@ app.post("/api/add-user", (req, res) => {
   }
 });
 
-// ✏️ EDITAR USUARIO
-app.put("/api/user/:username", (req, res) => {
+// ✏️ EDITAR USUARIO - ADMIN
+app.put("/api/user/:username", requireAdmin, (req, res) => {
   try {
     const username = req.params.username;
     const { password, active, expires } = req.body;
@@ -254,8 +282,8 @@ app.put("/api/user/:username", (req, res) => {
   }
 });
 
-// ❌ BORRAR USUARIO
-app.delete("/api/user/:username", (req, res) => {
+// ❌ BORRAR USUARIO - ADMIN
+app.delete("/api/user/:username", requireAdmin, (req, res) => {
   try {
     const username = req.params.username;
 
@@ -274,7 +302,7 @@ app.delete("/api/user/:username", (req, res) => {
   }
 });
 
-// 🔐 LOGIN
+// 🔐 LOGIN APK
 app.post("/api/login", (req, res) => {
   try {
     const { username, password } = req.body;
