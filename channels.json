@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "name": "Canal Demo",
-    "category": "Prueba",
-    "logo": "https://via.placeholder.com/150",
-    "stream_url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+    "name": "Tyc Sports",
+    "category": "Deportes",
+    "logo": "http://pirostv.lat:8080/images/LEIDO0TYILZMib3QdPsaSFbiaIDatwRiEYgBK07TGBiYQsZadUDrJBRfbGv35QHyecNV_GOtXlZLgghs-AFkufjFrvhq2HoQEmKQWVU4kvI.png",
+    "stream_url": "http://tutele.lat:8080/live/pamela/123456/262179.ts"
   },
   {
     "id": 2,
