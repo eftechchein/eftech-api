@@ -1,28 +1,19 @@
 const express = require("express");
 const cors = require("cors");
+const fs = require("fs");
+const path = require("path");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-// 📺 CANALES
-const channels = [
-  {
-    id: 1,
-    name: "Canal Demo",
-    category: "Prueba",
-    logo: "https://via.placeholder.com/150",
-    stream_url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-  },
-  {
-    id: 2,
-    name: "Canal Demo 2",
-    category: "Prueba",
-    logo: "https://via.placeholder.com/150",
-    stream_url: "https://test-streams.mux.dev/test_001/stream.m3u8"
-  }
-];
+// 📺 LEER CANALES DESDE channels.json
+function getChannels() {
+  const filePath = path.join(__dirname, "channels.json");
+  const data = fs.readFileSync(filePath, "utf8");
+  return JSON.parse(data);
+}
 
 // 👤 USUARIOS
 const users = [
@@ -53,7 +44,33 @@ app.get("/", (req, res) => {
 
 // 📺 LISTA DE CANALES
 app.get("/api/channels", (req, res) => {
-  res.json(channels);
+  try {
+    const channels = getChannels();
+    res.json(channels);
+  } catch (error) {
+    res.status(500).json({
+      error: "Error leyendo channels.json"
+    });
+  }
+});
+
+// 📂 CATEGORÍAS
+app.get("/api/categories", (req, res) => {
+  try {
+    const channels = getChannels();
+
+    const categories = [
+      ...new Set(
+        channels.map(channel => channel.category)
+      )
+    ];
+
+    res.json(categories);
+  } catch (error) {
+    res.status(500).json({
+      error: "Error leyendo categorías"
+    });
+  }
 });
 
 // 🔐 LOGIN
