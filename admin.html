@@ -8,15 +8,21 @@
 
 <h1>EFTech Admin</h1>
 
-<h2>Agregar canal</h2>
+<h2 id="formTitle">Agregar canal</h2>
+
+<input id="channelId" type="hidden">
 
 <input id="name" placeholder="Nombre">
 <input id="category" placeholder="Categoría">
 <input id="logo" placeholder="Logo URL">
 <input id="stream" placeholder="Stream URL">
 
-<button onclick="addChannel()">
-Agregar
+<button onclick="saveChannel()">
+Guardar
+</button>
+
+<button onclick="clearForm()">
+Cancelar
 </button>
 
 <hr>
@@ -27,37 +33,36 @@ Agregar
 
 <script>
 
-const API =
-"https://eftech-api.onrender.com";
+const API = "https://eftech-api.onrender.com";
 
 async function loadChannels() {
+  const res = await fetch(API + "/api/channels");
+  const channels = await res.json();
 
-  const res =
-    await fetch(API + "/api/channels");
-
-  const channels =
-    await res.json();
-
-  const container =
-    document.getElementById("channels");
+  const container = document.getElementById("channels");
 
   container.innerHTML = "";
 
   channels.forEach(channel => {
-
     container.innerHTML += `
       <div style="
         border:1px solid #333;
         padding:10px;
         margin-bottom:10px;
+        background:#1a1a1a;
       ">
 
         <b>${channel.name}</b>
         <br>
-
-        ${channel.category}
+        Categoría: ${channel.category}
+        <br>
+        ID: ${channel.id}
 
         <br><br>
+
+        <button onclick='editChannel(${JSON.stringify(channel)})'>
+          Editar
+        </button>
 
         <button onclick="deleteChannel(${channel.id})">
           Borrar
@@ -68,43 +73,68 @@ async function loadChannels() {
   });
 }
 
-async function addChannel() {
+async function saveChannel() {
+  const id = document.getElementById("channelId").value;
 
-  await fetch(API + "/api/add-channel", {
+  const data = {
+    name: document.getElementById("name").value,
+    category: document.getElementById("category").value,
+    logo: document.getElementById("logo").value,
+    stream_url: document.getElementById("stream").value
+  };
 
-    method: "POST",
+  if (id) {
+    await fetch(API + "/api/channel/" + id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+  } else {
+    await fetch(API + "/api/add-channel", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+  }
 
-    headers: {
-      "Content-Type": "application/json"
-    },
-
-    body: JSON.stringify({
-
-      name:
-        document.getElementById("name").value,
-
-      category:
-        document.getElementById("category").value,
-
-      logo:
-        document.getElementById("logo").value,
-
-      stream_url:
-        document.getElementById("stream").value
-    })
-  });
-
+  clearForm();
   loadChannels();
 }
 
-async function deleteChannel(id) {
+function editChannel(channel) {
+  document.getElementById("formTitle").innerText = "Editar canal";
 
-  await fetch(
-    API + "/api/channel/" + id,
-    {
-      method: "DELETE"
-    }
-  );
+  document.getElementById("channelId").value = channel.id;
+  document.getElementById("name").value = channel.name;
+  document.getElementById("category").value = channel.category;
+  document.getElementById("logo").value = channel.logo;
+  document.getElementById("stream").value = channel.stream_url;
+
+  window.scrollTo(0, 0);
+}
+
+function clearForm() {
+  document.getElementById("formTitle").innerText = "Agregar canal";
+
+  document.getElementById("channelId").value = "";
+  document.getElementById("name").value = "";
+  document.getElementById("category").value = "";
+  document.getElementById("logo").value = "";
+  document.getElementById("stream").value = "";
+}
+
+async function deleteChannel(id) {
+  if (!confirm("¿Seguro querés borrar este canal?")) {
+    return;
+  }
+
+  await fetch(API + "/api/channel/" + id, {
+    method: "DELETE"
+  });
 
   loadChannels();
 }
