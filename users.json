@@ -1,0 +1,20 @@
+[
+  {
+    "username": "admin",
+    "password": "1234",
+    "active": true,
+    "expires": "2026-12-31"
+  },
+  {
+    "username": "cliente1",
+    "password": "1111",
+    "active": true,
+    "expires": "2026-12-31"
+  },
+  {
+    "username": "cliente2",
+    "password": "2222",
+    "active": false,
+    "expires": "2026-12-31"
+  }
+]

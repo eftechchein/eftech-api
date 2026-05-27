@@ -10,14 +10,14 @@ app.use(express.json());
 app.use(express.static(__dirname));
 
 const CHANNELS_FILE = path.join(__dirname, "channels.json");
+const USERS_FILE = path.join(__dirname, "users.json");
 
-// 📺 LEER CANALES
+// 📺 CANALES
 function getChannels() {
   const data = fs.readFileSync(CHANNELS_FILE, "utf8");
   return JSON.parse(data);
 }
 
-// 💾 GUARDAR CANALES
 function saveChannels(channels) {
   fs.writeFileSync(
     CHANNELS_FILE,
@@ -26,26 +26,10 @@ function saveChannels(channels) {
 }
 
 // 👤 USUARIOS
-const users = [
-  {
-    username: "admin",
-    password: "1234",
-    active: true,
-    expires: "2026-12-31"
-  },
-  {
-    username: "cliente1",
-    password: "1111",
-    active: true,
-    expires: "2026-12-31"
-  },
-  {
-    username: "cliente2",
-    password: "2222",
-    active: false,
-    expires: "2026-12-31"
-  }
-];
+function getUsers() {
+  const data = fs.readFileSync(USERS_FILE, "utf8");
+  return JSON.parse(data);
+}
 
 // 🟢 HOME
 app.get("/", (req, res) => {
@@ -120,33 +104,6 @@ app.post("/api/add-channel", (req, res) => {
   }
 });
 
-// ❌ BORRAR CANAL
-app.delete("/api/channel/:id", (req, res) => {
-
-  try {
-
-    const id = parseInt(req.params.id);
-
-    let channels = getChannels();
-
-    const filtered =
-      channels.filter(channel => channel.id !== id);
-
-    saveChannels(filtered);
-
-    res.json({
-      success: true
-    });
-
-  } catch (error) {
-
-    res.status(500).json({
-      success: false,
-      message: "Error borrando canal"
-    });
-  }
-});
-
 // ✏️ EDITAR CANAL
 app.put("/api/channel/:id", (req, res) => {
   try {
@@ -187,43 +144,77 @@ app.put("/api/channel/:id", (req, res) => {
   }
 });
 
+// ❌ BORRAR CANAL
+app.delete("/api/channel/:id", (req, res) => {
+  try {
+    const id = parseInt(req.params.id);
+
+    let channels = getChannels();
+
+    const filtered =
+      channels.filter(channel => channel.id !== id);
+
+    saveChannels(filtered);
+
+    res.json({
+      success: true
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error borrando canal"
+    });
+  }
+});
+
 // 🔐 LOGIN
 app.post("/api/login", (req, res) => {
-  const { username, password } = req.body;
+  try {
+    const { username, password } = req.body;
 
-  const user = users.find(
-    u => u.username === username && u.password === password
-  );
+    const users = getUsers();
 
-  if (!user) {
-    return res.status(401).json({
+    const user = users.find(
+      u => u.username === username && u.password === password
+    );
+
+    if (!user) {
+      return res.status(401).json({
+        success: false,
+        message: "Usuario o contraseña incorrectos"
+      });
+    }
+
+    if (!user.active) {
+      return res.status(403).json({
+        success: false,
+        message: "Usuario desactivado"
+      });
+    }
+
+    const today = new Date();
+    const expires = new Date(user.expires);
+
+    if (expires < today) {
+      return res.status(403).json({
+        success: false,
+        message: "Cuenta vencida"
+      });
+    }
+
+    res.json({
+      success: true,
+      username: user.username,
+      expires: user.expires
+    });
+
+  } catch (error) {
+    res.status(500).json({
       success: false,
-      message: "Usuario o contraseña incorrectos"
+      message: "Error en login"
     });
   }
-
-  if (!user.active) {
-    return res.status(403).json({
-      success: false,
-      message: "Usuario desactivado"
-    });
-  }
-
-  const today = new Date();
-  const expires = new Date(user.expires);
-
-  if (expires < today) {
-    return res.status(403).json({
-      success: false,
-      message: "Cuenta vencida"
-    });
-  }
-
-  res.json({
-    success: true,
-    username: user.username,
-    expires: user.expires
-  });
 });
 
 // 🚀 SERVER
