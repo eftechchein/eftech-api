@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>EFTech Admin</title>
 </head>
@@ -9,99 +8,82 @@
 
 <h1>EFTech Admin</h1>
 
-<button onclick="logoutAdmin()">
-  🔒 Cerrar sesión
-</button>
-
-<button onclick="showTab('channelsTab')">
-  📺 Canales
-</button>
-
-<button onclick="showTab('usersTab')">
-  👤 Usuarios
-</button>
+<button onclick="logoutAdmin()">🔒 Cerrar sesión</button>
+<button onclick="showTab('channelsTab')">📺 Canales</button>
+<button onclick="showTab('usersTab')">👤 Usuarios</button>
 
 <hr>
 
-<!-- 📺 TAB CANALES -->
 <div id="channelsTab">
-
   <h2 id="channelFormTitle">Agregar canal</h2>
 
   <input id="channelId" type="hidden">
-
   <input id="name" placeholder="Nombre">
   <input id="category" placeholder="Categoría">
   <input id="logo" placeholder="Logo URL">
   <input id="stream" placeholder="Stream URL">
 
-  <button onclick="saveChannel()">
-    Guardar canal
-  </button>
-
-  <button onclick="clearChannelForm()">
-    Cancelar
-  </button>
+  <button onclick="saveChannel()">Guardar canal</button>
+  <button onclick="clearChannelForm()">Cancelar</button>
 
   <hr>
-
   <h2>Canales</h2>
-
   <div id="channels"></div>
-
 </div>
 
-<!-- 👤 TAB USUARIOS -->
 <div id="usersTab" style="display:none;">
-
   <h2 id="userFormTitle">Agregar usuario</h2>
 
   <input id="editUsername" type="hidden">
-
   <input id="username" placeholder="Usuario">
   <input id="password" placeholder="Contraseña">
-  <input
-    id="expires"
-    placeholder="Vencimiento YYYY-MM-DD"
-    value="2026-12-31">
+  <input id="expires" placeholder="Vencimiento YYYY-MM-DD" value="2026-12-31">
 
   <label>
     <input id="active" type="checkbox" checked>
     Activo
   </label>
 
-  <button onclick="saveUser()">
-    Guardar usuario
-  </button>
-
-  <button onclick="clearUserForm()">
-    Cancelar
-  </button>
+  <button onclick="saveUser()">Guardar usuario</button>
+  <button onclick="clearUserForm()">Cancelar</button>
 
   <hr>
-
   <h2>Usuarios</h2>
-
   <div id="users"></div>
-
 </div>
 
 <script>
-
 const API = window.location.origin;
 
-// 🔄 TABS
 function showTab(tabId) {
-
   document.getElementById("channelsTab").style.display = "none";
   document.getElementById("usersTab").style.display = "none";
-
   document.getElementById(tabId).style.display = "block";
 }
 
-// 📺 CARGAR CANALES
-async function loadChannels() {
+async function handleResponse(res) {
+  let result;
 
+  try {
+    result = await res.json();
+  } catch {
+    result = {};
+  }
+
+  if (!res.ok || result.success === false) {
+    alert(
+      result.message ||
+      result.details ||
+      result.error ||
+      "Error en la operación"
+    );
+    return null;
+  }
+
+  return result;
+}
+
+async function loadChannels() {
   const res = await fetch(API + "/api/channels", {
     credentials: "same-origin"
   });
@@ -109,107 +91,70 @@ async function loadChannels() {
   const channels = await res.json();
 
   const container = document.getElementById("channels");
-
   container.innerHTML = "";
 
   channels.forEach(channel => {
-
     container.innerHTML += `
-      <div style="
-        border:1px solid #333;
-        padding:10px;
-        margin-bottom:10px;
-        background:#1a1a1a;
-      ">
-
+      <div style="border:1px solid #333;padding:10px;margin-bottom:10px;background:#1a1a1a;">
         <b>${channel.name}</b><br>
-
         Categoría: ${channel.category}<br>
         ID: ${channel.id}<br><br>
 
-        <button onclick='editChannel(${JSON.stringify(channel)})'>
-          Editar
-        </button>
-
-        <button onclick="deleteChannel(${channel.id})">
-          Borrar
-        </button>
-
+        <button onclick='editChannel(${JSON.stringify(channel)})'>Editar</button>
+        <button onclick="deleteChannel(${channel.id})">Borrar</button>
       </div>
     `;
   });
 }
 
-// 💾 GUARDAR CANAL
 async function saveChannel() {
-
   const id = document.getElementById("channelId").value;
 
   const data = {
-    name: document.getElementById("name").value,
-    category: document.getElementById("category").value,
-    logo: document.getElementById("logo").value,
-    stream_url: document.getElementById("stream").value
+    name: document.getElementById("name").value.trim(),
+    category: document.getElementById("category").value.trim(),
+    logo: document.getElementById("logo").value.trim(),
+    stream_url: document.getElementById("stream").value.trim()
   };
 
-  if (id) {
+  let res;
 
-    await fetch(API + "/api/channel/" + id, {
+  if (id) {
+    res = await fetch(API + "/api/channel/" + id, {
       method: "PUT",
       credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
-
   } else {
-
-    await fetch(API + "/api/add-channel", {
+    res = await fetch(API + "/api/add-channel", {
       method: "POST",
       credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
   }
 
-  clearChannelForm();
+  const result = await handleResponse(res);
+  if (!result) return;
 
+  alert("Canal guardado correctamente");
+  clearChannelForm();
   loadChannels();
 }
 
-// ✏️ EDITAR CANAL
 function editChannel(channel) {
-
-  document.getElementById("channelFormTitle").innerText =
-    "Editar canal";
-
-  document.getElementById("channelId").value =
-    channel.id;
-
-  document.getElementById("name").value =
-    channel.name;
-
-  document.getElementById("category").value =
-    channel.category;
-
-  document.getElementById("logo").value =
-    channel.logo;
-
-  document.getElementById("stream").value =
-    channel.stream_url;
-
+  document.getElementById("channelFormTitle").innerText = "Editar canal";
+  document.getElementById("channelId").value = channel.id;
+  document.getElementById("name").value = channel.name || "";
+  document.getElementById("category").value = channel.category || "";
+  document.getElementById("logo").value = channel.logo || "";
+  document.getElementById("stream").value = channel.stream_url || "";
   window.scrollTo(0, 0);
 }
 
-// 🧹 LIMPIAR FORM CANAL
 function clearChannelForm() {
-
-  document.getElementById("channelFormTitle").innerText =
-    "Agregar canal";
-
+  document.getElementById("channelFormTitle").innerText = "Agregar canal";
   document.getElementById("channelId").value = "";
   document.getElementById("name").value = "";
   document.getElementById("category").value = "";
@@ -217,24 +162,22 @@ function clearChannelForm() {
   document.getElementById("stream").value = "";
 }
 
-// ❌ BORRAR CANAL
 async function deleteChannel(id) {
+  if (!confirm("¿Seguro querés borrar este canal?")) return;
 
-  if (!confirm("¿Seguro querés borrar este canal?")) {
-    return;
-  }
-
-  await fetch(API + "/api/channel/" + id, {
+  const res = await fetch(API + "/api/channel/" + id, {
     method: "DELETE",
     credentials: "same-origin"
   });
 
+  const result = await handleResponse(res);
+  if (!result) return;
+
+  alert("Canal borrado");
   loadChannels();
 }
 
-// 👤 CARGAR USUARIOS
 async function loadUsers() {
-
   const res = await fetch(API + "/api/users", {
     credentials: "same-origin"
   });
@@ -242,166 +185,113 @@ async function loadUsers() {
   const users = await res.json();
 
   const container = document.getElementById("users");
-
   container.innerHTML = "";
 
   users.forEach(user => {
-
     container.innerHTML += `
-      <div style="
-        border:1px solid #333;
-        padding:10px;
-        margin-bottom:10px;
-        background:#1a1a1a;
-      ">
-
+      <div style="border:1px solid #333;padding:10px;margin-bottom:10px;background:#1a1a1a;">
         <b>${user.username}</b><br>
-
         Activo: ${user.active ? "Sí" : "No"}<br>
         Vence: ${user.expires}<br><br>
 
-        <button onclick='editUser(${JSON.stringify(user)})'>
-          Editar
-        </button>
-
-        <button onclick="deleteUser('${user.username}')">
-          Borrar
-        </button>
-
+        <button onclick='editUser(${JSON.stringify(user)})'>Editar</button>
+        <button onclick="deleteUser('${user.username}')">Borrar</button>
       </div>
     `;
   });
 }
 
-// 💾 GUARDAR USUARIO
 async function saveUser() {
-
-  const editingUsername =
-    document.getElementById("editUsername").value;
+  const editingUsername = document.getElementById("editUsername").value;
 
   const data = {
-    username: document.getElementById("username").value,
-    password: document.getElementById("password").value,
+    username: document.getElementById("username").value.trim(),
+    password: document.getElementById("password").value.trim(),
     active: document.getElementById("active").checked,
-    expires: document.getElementById("expires").value
+    expires: document.getElementById("expires").value.trim()
   };
 
-  if (editingUsername) {
+  let res;
 
-    await fetch(API + "/api/user/" + editingUsername, {
+  if (editingUsername) {
+    res = await fetch(API + "/api/user/" + editingUsername, {
       method: "PUT",
       credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         password: data.password,
         active: data.active,
         expires: data.expires
       })
     });
-
   } else {
-
-    await fetch(API + "/api/add-user", {
+    res = await fetch(API + "/api/add-user", {
       method: "POST",
       credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
   }
 
-  clearUserForm();
+  const result = await handleResponse(res);
+  if (!result) return;
 
+  alert("Usuario guardado correctamente");
+  clearUserForm();
   loadUsers();
 }
 
-// ✏️ EDITAR USUARIO
 function editUser(user) {
-
-  document.getElementById("userFormTitle").innerText =
-    "Editar usuario";
-
-  document.getElementById("editUsername").value =
-    user.username;
-
-  document.getElementById("username").value =
-    user.username;
-
-  document.getElementById("username").disabled =
-    true;
-
-  document.getElementById("password").value =
-    user.password;
-
-  document.getElementById("active").checked =
-    user.active;
-
-  document.getElementById("expires").value =
-    user.expires;
-
+  document.getElementById("userFormTitle").innerText = "Editar usuario";
+  document.getElementById("editUsername").value = user.username;
+  document.getElementById("username").value = user.username;
+  document.getElementById("username").disabled = true;
+  document.getElementById("password").value = user.password || "";
+  document.getElementById("active").checked = user.active;
+  document.getElementById("expires").value = user.expires || "2026-12-31";
   window.scrollTo(0, 0);
 }
 
-// 🧹 LIMPIAR FORM USUARIO
 function clearUserForm() {
-
-  document.getElementById("userFormTitle").innerText =
-    "Agregar usuario";
-
+  document.getElementById("userFormTitle").innerText = "Agregar usuario";
   document.getElementById("editUsername").value = "";
-
   document.getElementById("username").value = "";
-
-  document.getElementById("username").disabled =
-    false;
-
+  document.getElementById("username").disabled = false;
   document.getElementById("password").value = "";
-
   document.getElementById("active").checked = true;
-
-  document.getElementById("expires").value =
-    "2026-12-31";
+  document.getElementById("expires").value = "2026-12-31";
 }
 
-// ❌ BORRAR USUARIO
 async function deleteUser(username) {
+  if (!confirm("¿Seguro querés borrar este usuario?")) return;
 
-  if (!confirm("¿Seguro querés borrar este usuario?")) {
-    return;
-  }
-
-  await fetch(API + "/api/user/" + username, {
+  const res = await fetch(API + "/api/user/" + username, {
     method: "DELETE",
     credentials: "same-origin"
   });
 
+  const result = await handleResponse(res);
+  if (!result) return;
+
+  alert("Usuario borrado");
   loadUsers();
 }
 
-// 🔒 LOGOUT
 function logoutAdmin() {
-
   fetch(window.location.origin, {
     headers: {
       "Authorization": "Basic logout"
     }
   }).then(() => {
-
     window.location.href =
       "https://logout:logout@" +
       window.location.host +
       "/admin.html";
-
   });
 }
 
-// 🚀 INIT
 loadChannels();
 loadUsers();
-
 </script>
 
 </body>
