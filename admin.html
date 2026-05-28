@@ -71,12 +71,11 @@ async function handleResponse(res) {
   }
 
   if (!res.ok || result.success === false) {
-    alert(
-      result.message ||
-      result.details ||
-      result.error ||
-      "Error en la operación"
-    );
+alert(
+  (result.message || "Error") +
+  "\n\n" +
+  (result.details || result.error || "")
+);
     return null;
   }
 
