@@ -283,6 +283,7 @@ app.delete("/api/user/:username", requireAdmin, async (req, res) => {
 
 // 🔐 LOGIN APK
 app.post("/api/login", async (req, res) => {
+
   const { username, password } = req.body;
 
   const { data: user, error } = await supabase
@@ -299,6 +300,7 @@ app.post("/api/login", async (req, res) => {
     });
   }
 
+  // 🚫 USUARIO DESACTIVADO
   if (!user.active) {
     return res.status(403).json({
       success: false,
@@ -306,20 +308,26 @@ app.post("/api/login", async (req, res) => {
     });
   }
 
-  const today = new Date();
-  const expires = new Date(user.expires);
+  // 📅 VALIDAR VENCIMIENTO SOLO SI EXISTE
+  if (user.expires) {
 
-  if (expires < today) {
-    return res.status(403).json({
-      success: false,
-      message: "Cuenta vencida"
-    });
+    const today = new Date();
+
+    const expires = new Date(user.expires);
+
+    if (expires < today) {
+      return res.status(403).json({
+        success: false,
+        message: "Cuenta vencida"
+      });
+    }
   }
 
+  // ✅ LOGIN OK
   res.json({
     success: true,
     username: user.username,
-    expires: user.expires
+    expires: user.expires || null
   });
 });
 
